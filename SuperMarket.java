@@ -41,9 +41,10 @@ int status=s.executeUpdate("INSERT INTO super_market VALUES ('"+prod1+"',"+price
 		ResultSet rs=s.executeQuery("SELECT * from super_market");
 		return rs;
 	}
-	public ResultSet calculate(Connection con,Statement s)
+	public ResultSet calculate(Connection con,Statement s,String s1,String s2) throws SQLException
 	{
-		
+		ResultSet rs=s.executeQuery("SELECT * from super_market WHERE prod1='"+s1+"' && prod2='"+s2+"'");
+		return rs;
 	}
 	
 }
